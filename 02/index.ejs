@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>ミニ掲示板</title>
+    <link rel="stylesheet" href="./style.css">
+    <script>
+      function init() {
+        const id = localStorage.getItem('id');
+        if (id === null) {
+          location.href = './login';
+        }
+        document.querySelector('#id').textContent = `ID:${id}`;
+        document.querySelector('#id_input').value = id;
+      }
+    </script>
+  </head>
+  <body onload="init()">
+    <h1>掲示板</h1>
+    <p>※メッセージは最大10個まで保管されます。</p>
+    <form method="POST" action="/">
+      <p><span id="id"></span><input type="hidden" id="id_input" name="id" value=""></p>
+      <p><input type="text" name="msg"><input type="submit" value="送信"></p>
+    </form>
+    <hr>
+    <table>
+      <% for (let i in data) { %>
+        <%- include('data_item', {val: data[i]}) %>
+      <% } %>
+    </table>
+  </body>
+</html>
