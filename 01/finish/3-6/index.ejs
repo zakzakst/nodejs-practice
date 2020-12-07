@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p><%= content %></p>
+    <table>
+      <% for(const key in data) { %>
+        <%- include('data_item', {key: key, val: [data[key]]}) %>
+      <% } %>
+    </table>
+  </body>
+</html>
