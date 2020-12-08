@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p><%= content %></p>
+    <form method="POST" action="/database/edit">
+      <input type="hidden" name="id" value="<%= mydata.id %> ">
+      <table>
+        <tr>
+          <th>NAME</th>
+          <td><input type="text" name="name" value="<%= mydata.name %>"></td>
+        </tr>
+        <tr>
+          <th>MAIL</th>
+          <td><input type="text" name="mail" value="<%= mydata.mail %>"></td>
+        </tr>
+        <tr>
+          <th>AGE</th>
+          <td><input type="number" name="age" value="<%= mydata.age %>"></td>
+        </tr>
+        <tr>
+          <th></th>
+          <td><input type="submit" value="更新"></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
