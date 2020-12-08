@@ -9,7 +9,7 @@
       // ".nuxt": true,
       // "dist": true,
       // ".editorconfig": true,
-      "package.json": true,
+      // "package.json": true,
       "package-lock.json": true,
       ".gitignore": true
     },
