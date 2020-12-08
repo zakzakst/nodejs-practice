@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/jquery.min.js"></script>
+    <script>
+      $(() => {
+        $('#btn').on('click', async () => {
+          const n = $('#num').val();
+          const data = await getJson('/ajax?id=' + n);
+          const markup = `
+            <table>
+              <tr>
+                <th>名前</th>
+                <td>${data.name}</td>
+              </tr>
+              <tr>
+                <th>年齢</th>
+                <td>${data.age}</td>
+              </tr>
+              <tr>
+                <th>メール</th>
+                <td>${data.mail}</td>
+              </tr>
+            </table>
+          `;
+          $('#msg').html(markup);
+        });
+
+        async function getJson(url) {
+          const res = await fetch(url);
+          return res.json();
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p id="msg"><%- content %></p>
+    <p>
+      <input type="text" name="num" id="num">
+      <input type="button" id="btn" value="GET!">
+    </p>
+  </body>
+</html>
