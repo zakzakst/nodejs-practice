@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <table>
+      <% for (let i in content) { %>
+        <tr>
+          <% const obj = content[i]; %>
+          <th><%= obj.id %></th>
+          <td><%= obj.name %></td>
+          <td><%= obj.mail %></td>
+          <td><%= obj.age %></td>
+        </tr>
+      <% } %>
+    </table>
+  </body>
+</html>

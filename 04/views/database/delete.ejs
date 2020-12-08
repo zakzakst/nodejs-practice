@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p><%= content %></p>
+    <table>
+      <tr>
+        <th>ID</th>
+        <td><%= mydata.id %></td>
+      </tr>
+      <tr>
+        <th>NAME</th>
+        <td><%= mydata.name %></td>
+      </tr>
+      <tr>
+        <th>MAIL</th>
+        <td><%= mydata.mail %></td>
+      </tr>
+      <tr>
+        <th>AGE</th>
+        <td><%= mydata.age %></td>
+      </tr>
+    </table>
+    <form method="POST" action="/database/delete">
+      <input type="hidden" name="id" value="<%= mydata.id %>">
+      <input type="submit" value="削除">
+    </form>
+  </body>
+</html>
