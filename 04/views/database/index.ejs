@@ -9,7 +9,8 @@
     <table>
       <% for (let i in content) { %>
         <tr>
-          <% const obj = content[i]; %>
+          <%# const obj = content[i]; %>
+          <% const obj = content[i].attributes; %>
           <th><%= obj.id %></th>
           <td><%= obj.name %></td>
           <td><%= obj.mail %></td>
@@ -17,5 +18,11 @@
         </tr>
       <% } %>
     </table>
+    <p>
+      <a href="/database/1">&lt;&lt; First</a>
+      <a href="/database/<%= pagination.page - 1 %>">&lt;&lt; Prev</a>
+      <a href="/database/<%= pagination.page + 1 %>">Next &gt;&gt;</a>
+      <a href="/database/<%= pagination.pageCount %>">Last &gt;&gt;</a>
+    </p>
   </body>
 </html>
