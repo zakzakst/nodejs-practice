@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p><%= content %></p>
+    <form method="POST" action="/login">
+      <table>
+        <tr>
+          <th>NAME</th>
+          <td><input type="text" name="name" value="<%= form.name %>"></td>
+        </tr>
+        <tr>
+          <th>PASSWORD</th>
+          <td><input type="password" name="password" value="<%= form.password %>"></td>
+        </tr>
+        <tr>
+          <th><input type="submit" value="ログイン"></th>
+        </tr>
+      </table>
+    </form>
+    <p><a href="/">&lt;&lt; Topへ戻る</a></p>
+  </body>
+</html>
