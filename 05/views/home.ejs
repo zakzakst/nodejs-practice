@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p><%= collection[0].relations.user.attributes.name %> 's Home.</p>
+    <p><%= collection[0].relations.user.attributes.comment %></p>
+    <hr>
+    <table>
+      <% for (let i in collection) { %>
+        <%- include('data_item', {val: collection[i]}) %>
+      <% } %>
+    </table>
+    <p>
+      <% if (pagination.page > 1) { %>
+        <a href="/home/<%= user_id %>/<%= pagination.page - 1 %> ">&lt;&lt; Prev</a>
+      <% } else { %>
+        <span>&lt;&lt; Prev</span>
+      <% } %>
+      |
+      <% if (pagination.page < pagination.pageCount) { %>
+        <a href="/home/<%= user_id %>/<%= pagination.page + 1 %> ">Next &gt;&gt;</a>
+      <% } else { %>
+        <span>Next &gt;&gt;</span>
+      <% } %>
+    </p>
+    <p><a href="/">&lt;&lt; Top</a></p>
+  </body>
+</html>
