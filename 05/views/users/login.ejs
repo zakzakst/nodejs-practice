@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p><%= content %></p>
+    <form method="POST" action="/users">
+      <table>
+        <tr>
+          <th>NAME</th>
+          <td><input type="text" name="name" value="<%= form.name %>"></td>
+        </tr>
+        <tr>
+          <th>PASSWORD</th>
+          <td><input type="password" name="password" value="<%= form.password %>"></td>
+        </tr>
+        <tr>
+          <th>COMMENT</th>
+          <td><textarea name="comment"><%= form.comment %></textarea></td>
+        </tr>
+        <tr>
+          <th></th>
+          <td><input type="submit" value="ログイン"></td>
+        </tr>
+      </table>
+    </form>
+    <p><a href="/">&lt;&lt; Topへ戻る</a> | <a href="/users/add">アカウントの作成 &gt;&gt;</a></p>
+  </body>
+</html>
