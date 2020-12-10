@@ -12,5 +12,13 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "bookshelf": "^1.2.0",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.8.0",
+    "knex": "^0.21.12",
+    "markdown-it": "^12.0.3",
+    "mysql": "^2.18.1"
   }
 }
