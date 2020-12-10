@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p><%= head %></p>
+    <form method="POST" action="/mark/<%= id %>">
+      <table>
+        <tr>
+          <th>SOURCE</th>
+        </tr>
+        <tr>
+          <td><textarea name="source" cols="60" rows="5"><%= source %></textarea></td>
+        </tr>
+        <tr>
+          <th><input type="submit" value="Update"></th>
+        </tr>
+      </table>
+    </form>
+    <div><%- content %></div>
+    <p><%= footer %></p>
+    <p><a href="/">&lt;&lt; Topへ戻る</a></p>
+  </body>
+</html>
