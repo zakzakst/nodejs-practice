@@ -22,6 +22,8 @@ app.get('/', (req, res) => {
   // sqlOrderBy(connection, req, res);
   // sqlWhere(connection, req, res);
   sqlWhere2(connection, req, res);
+  // 接続を解除
+  connection.end();
 });
 
 app.listen(port, () => {
